@@ -1,0 +1,27 @@
+﻿<Page x:Class="exam_creator.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:exam_creator"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="CentralButtons">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="20 10 20 10"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Height" Value="180" />
+            <Setter Property="Width" Value="180" />
+        </Style>
+    </Page.Resources>
+    <StackPanel>
+        <TextBlock Text="Wellcome to Exam Creator 0.0" FontSize="24" Margin="20 20" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="40">
+            <Button Name="BtnCreateNewExam" Content="Create exam" Style="{StaticResource CentralButtons}" Click="BtnCreateNewExam_Click" />
+            <Button Name="BtnOpenExam" Content="Open exam" Style="{StaticResource CentralButtons}" Click="BtnOpenExam_Click" />
+            <Button Name="BtnCreateNewQuestion" Content="Create new question" Style="{StaticResource CentralButtons}" Click="BtnCreateNewQuestion_Click" />
+        </StackPanel>
+    </StackPanel>
+</Page>
