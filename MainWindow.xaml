@@ -6,5 +6,12 @@
         xmlns:local="clr-namespace:exam_creator"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid></Grid>
+    <StackPanel>
+        <TextBlock Text="Wellcome to Exam Creator 0.0" FontSize="24" Margin="20 20" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal">
+            <Button Name="BtnCreateNewExam" Content="Create exam" FontSize="16" Margin="20,10, 20, 10" Padding="10"/>
+            <Button Name="BtnOpenExam" Content="Open exame" FontSize="16" Margin="20,10, 20, 10" Padding="10"/>
+            <Button Name="BtnCreateNewQuestion" FontSize="16" Content="Create new question" Margin="20,10, 20, 10" Padding="10"/>
+        </StackPanel>
+    </StackPanel>
 </Window>
