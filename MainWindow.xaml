@@ -6,12 +6,21 @@
         xmlns:local="clr-namespace:exam_creator"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="CentralButtons">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="20 10 20 10"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Height" Value="180" />
+            <Setter Property="Width" Value="180" />
+        </Style>
+    </Window.Resources>
     <StackPanel>
         <TextBlock Text="Wellcome to Exam Creator 0.0" FontSize="24" Margin="20 20" HorizontalAlignment="Center"/>
-        <StackPanel Orientation="Horizontal">
-            <Button Name="BtnCreateNewExam" Content="Create exam" FontSize="16" Margin="20,10, 20, 10" Padding="10"/>
-            <Button Name="BtnOpenExam" Content="Open exame" FontSize="16" Margin="20,10, 20, 10" Padding="10"/>
-            <Button Name="BtnCreateNewQuestion" FontSize="16" Content="Create new question" Margin="20,10, 20, 10" Padding="10"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="40">
+            <Button Name="BtnCreateNewExam" Content="Create exam" Style="{StaticResource CentralButtons}"/>
+            <Button Name="BtnOpenExam" Content="Open exam" Style="{StaticResource CentralButtons}"/>
+            <Button Name="BtnCreateNewQuestion" Content="Create new question" Style="{StaticResource CentralButtons}"/>
         </StackPanel>
     </StackPanel>
 </Window>
