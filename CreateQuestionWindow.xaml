@@ -21,8 +21,10 @@
         <TextBlock Text="Question text" Style="{StaticResource FormLabel}"/>
         <TextBox MaxLines="12" Height="150" VerticalScrollBarVisibility="Auto" FontSize="14"/>
         <CheckBox Name="multipleChoicesCheckBox" Content="Multiple choices?" />
-        <CheckBox Content="Single answer?" IsChecked="true" Visibility="{Binding IsChecked,ElementName=multipleChoicesCheckBox, 
-               Converter={StaticResource booleanToVisibility}}"/>
-        <local:AnswerOptionsListView/>
+        <StackPanel Visibility="{Binding IsChecked,ElementName=multipleChoicesCheckBox, 
+                   Converter={StaticResource booleanToVisibility}}">
+            <CheckBox Content="Single answer?" IsChecked="true" />
+            <local:AnswerOptionsListView/>
+        </StackPanel>
     </StackPanel>
 </Window>
