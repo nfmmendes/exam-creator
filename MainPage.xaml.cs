@@ -36,7 +36,8 @@ namespace exam_creator
 
         private void BtnCreateNewQuestion_Click(object sender, RoutedEventArgs e)
         {
-            var _ = MessageBox.Show($"{BtnCreateNewQuestion.Content} button clicked");
+            var createNewQuestionWindow = new CreateQuestionWindow();
+            createNewQuestionWindow.ShowDialog();
         }
     }
 }
