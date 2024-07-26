@@ -23,5 +23,6 @@
         <CheckBox Name="multipleChoicesCheckBox" Content="Multiple choices?" />
         <CheckBox Content="Single answer?" IsChecked="true" Visibility="{Binding IsChecked,ElementName=multipleChoicesCheckBox, 
                Converter={StaticResource booleanToVisibility}}"/>
+        <local:AnswerOptionsListView/>
     </StackPanel>
 </Window>
