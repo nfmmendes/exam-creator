@@ -16,36 +16,13 @@ using System.Windows.Shapes;
 namespace exam_creator
 {
     /// <summary>
-    /// Per utilizzare questo controllo personalizzato in un file XAML, eseguire i passaggi 1a o 1b e 2.
-    ///
-    /// Passaggio 1a) Utilizzo di questo controllo personalizzato in un file XAML esistente nel progetto corrente.
-    /// Aggiungere questo attributo XmlNamespace all'elemento radice del file di markup dove 
-    /// deve essere utilizzato:
-    ///
-    ///     xmlns:MyNamespace="clr-namespace:exam_creator"
-    ///
-    ///
-    /// Passaggio 1b) Utilizzo di questo controllo personalizzato in un file XAML esistente in un progetto diverso.
-    /// Aggiungere questo attributo XmlNamespace all'elemento radice del file di markup dove 
-    /// deve essere utilizzato:
-    ///
-    ///     xmlns:MyNamespace="clr-namespace:exam_creator;assembly=exam_creator"
-    ///
-    /// Sarà inoltre necessario aggiungere nel progetto in cui si trova il file XAML
-    /// un riferimento a questo progetto, quindi ricompilare per evitare errori di compilazione:
-    ///
-    ///     In Esplora soluzioni, fare clic con il pulsante destro del mouse sul progetto di destinazione, quindi scegliere
-    ///     "Aggiungi riferimento"->"Progetti"->[Individuare e selezionare questo progetto]
-    ///
-    ///
-    /// Passaggio 2)
-    /// Utilizzare il controllo nel file XAML.
-    ///
-    ///     <MyNamespace:CustomControl1/>
-    ///
+    /// Class <c>AnswerOptionsListView</c> is a control to create a list of alternatives of a question.
     /// </summary>
     public class AnswerOptionsListView : Control
     {
+        /// <summary>
+        /// Static constructor. 
+        /// </summary>
         static AnswerOptionsListView()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(AnswerOptionsListView), new FrameworkPropertyMetadata(typeof(AnswerOptionsListView)));
