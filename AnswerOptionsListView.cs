@@ -1,6 +1,8 @@
 ﻿using exam_creator.Data;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -22,7 +24,9 @@ namespace exam_creator
     /// </summary>
     public partial class AnswerOptionsListView : UserControl
     {
-        public List<QuestionAlternative> alternatives { get; private set; } = new List<QuestionAlternative>();
+        //private ObservableCollection<QuestionAlternative> alternatives;
+
+        public ObservableCollection<QuestionAlternative> Alternatives { get; set;    }
 
         /// <summary>
         /// Static constructor. 
@@ -30,11 +34,13 @@ namespace exam_creator
         public AnswerOptionsListView()
         {
             InitializeComponent();
+            DataContext = this;
+            Alternatives = new ObservableCollection<QuestionAlternative>();
         }
 
         void OnBtnAddAlternative_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("OK OK");
+            Alternatives.Add(new QuestionAlternative());
         }
     }
 }

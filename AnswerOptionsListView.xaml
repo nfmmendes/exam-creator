@@ -4,13 +4,19 @@
     xmlns:local="clr-namespace:exam_creator"
     x:Class="exam_creator.AnswerOptionsListView">
 
-
-    <StackPanel >
-        <Grid>
-            <CheckBox Name="Option1"/>
-            <TextBox Name="Option1Text" Height="48" VerticalScrollBarVisibility="Auto" Margin="40,0, 40, 0"/>
-        </Grid>
-
+    <StackPanel>
+        <ListView Margin="10" x:Name="AlternativesViewer" ItemsSource="{Binding Path=Alternatives}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <CheckBox Name="Option1" IsChecked="{Binding IsCorrect}"/>
+                        <TextBox Text="{Binding Text}" Name="Option1Text" 
+                                 Height="48" VerticalScrollBarVisibility="Auto" 
+                                 Margin="40,10, 40, 10"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Button Content="Add alternative" HorizontalAlignment="Left" Padding="8" Width="100" Margin="40" Click="OnBtnAddAlternative_Click"/>
     </StackPanel>
 
