@@ -1,0 +1,17 @@
+<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:exam_creator"
+    x:Class="exam_creator.AnswerOptionsListView">
+
+
+    <StackPanel >
+        <Grid>
+            <CheckBox Name="Option1"/>
+            <TextBox Name="Option1Text" Height="48" VerticalScrollBarVisibility="Auto" Margin="40,0, 40, 0"/>
+        </Grid>
+
+        <Button Content="Add alternative" HorizontalAlignment="Left" Padding="8" Width="100" Margin="40" Click="OnBtnAddAlternative_Click"/>
+    </StackPanel>
+
+</UserControl>
