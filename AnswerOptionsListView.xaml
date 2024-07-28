@@ -22,6 +22,11 @@
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Margin" Value="10"/>
         </Style>
+        <Style TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Padding" Value="8" />
+            <Setter Property="Margin" Value="40" />
+        </Style>
     </UserControl.Resources>
 
     <StackPanel>
@@ -41,7 +46,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Content="Add alternative" HorizontalAlignment="Left" Padding="8" Width="100" Margin="40" Click="OnBtnAddAlternative_Click"/>
+            <Button Content="Add alternative" Click="OnBtnAddAlternative_Click"/>
         </WrapPanel>
     </StackPanel>
 
