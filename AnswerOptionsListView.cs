@@ -42,5 +42,12 @@ namespace exam_creator
         {
             Alternatives.Add(new QuestionAlternative());
         }
+
+        void OnDeleteIcon_MouseDown(object sender, MouseButtonEventArgs e) {
+            var button = (Image)sender;
+            var item = (QuestionAlternative)button.Tag;
+
+            Alternatives.Remove(item);
+        }
     }
 }
