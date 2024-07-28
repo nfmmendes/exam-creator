@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:exam_creator"
         mc:Ignorable="d"
-        Title="CreateQuestionWindow" Height="450" Width="800">
+        Title="CreateQuestionWindow" Height="750" Width="800">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="booleanToVisibility"/>
         <Style TargetType="CheckBox">
