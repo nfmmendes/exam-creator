@@ -42,6 +42,7 @@
                                      Margin="30,0, 20, 0"
                                       Width="{StaticResource ListViewWidthBinding}"
                                      />
+                            <Image  HorizontalAlignment="Right" Width="20" Height="20" Source="/img/delete.png"/>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
