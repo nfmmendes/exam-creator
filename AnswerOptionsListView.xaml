@@ -6,14 +6,28 @@
     x:Class="exam_creator.AnswerOptionsListView">
     <UserControl.Resources>
         <converters:WidthSubtractionConverter x:Key="dateConverter"/>
+       
+        <Binding x:Key="WindowWidthBinding"
+                RelativeSource="{RelativeSource FindAncestor,  AncestorType={x:Type Window}}"
+                Path="ActualWidth"
+                Converter="{StaticResource dateConverter}"
+                ConverterParameter="40"/>
+        <Binding x:Key="ListViewWidthBinding"   
+                RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type ListView}}"
+                Path="ActualWidth"
+                Converter="{StaticResource dateConverter}"
+                ConverterParameter="100" />
+        <Style TargetType="ListView">
+            <Setter Property="Width" Value="{StaticResource ResourceKey=WindowWidthBinding}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
     </UserControl.Resources>
 
     <StackPanel>
         <WrapPanel Orientation="Vertical">
-            <ListView Margin="10" BorderThickness="0" x:Name="AlternativesViewer" 
-                      ItemsSource="{Binding Path=Alternatives}" 
-                      Width="{Binding RelativeSource={RelativeSource FindAncestor, 
-    AncestorType={x:Type Window}},Path=ActualWidth, Converter={StaticResource dateConverter}, ConverterParameter=40}">
+            <ListView x:Name="AlternativesViewer" 
+                      ItemsSource="{Binding Path=Alternatives}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid Margin="10,10, 10, 10">
@@ -21,8 +35,7 @@
                             <TextBox Text="{Binding Text}" Name="Option1Text" 
                                      Height="40" VerticalScrollBarVisibility="Auto" 
                                      Margin="30,0, 20, 0"
-                                    Width="{Binding RelativeSource={RelativeSource FindAncestor, 
-                                    AncestorType={x:Type ListView}},Path=ActualWidth, Converter={StaticResource dateConverter}, ConverterParameter=100}"
+                                      Width="{StaticResource ListViewWidthBinding}"
                                      />
                         </Grid>
                     </DataTemplate>
