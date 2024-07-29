@@ -1,4 +1,5 @@
 ﻿using exam_creator.Data;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,7 +25,15 @@ namespace exam_creator
     /// </summary>
     public partial class AnswerOptionsListCreator : UserControl
     {
+        /// <value>
+        /// The list of alternatives
+        /// </value>
         public ObservableCollection<QuestionAlternative> Alternatives { get; set; }
+
+        /// <value>
+        /// Defines if the alternatives are images. The default value is false. 
+        /// </value>
+        public bool IsImageList { get; set; } = false;
 
         /// <summary>
         /// Static constructor. 
@@ -43,7 +52,19 @@ namespace exam_creator
         /// <param name="e"> The event args. </param>
         void OnBtnAddAlternative_Click(object sender, RoutedEventArgs e)
         {
-            Alternatives.Add(new QuestionAlternative());
+            var alternative = new QuestionAlternative();
+            if (IsImageList)
+            {
+                var dialog = new OpenFileDialog();
+                dialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.svg)|*.jpg;*.jpeg;*.png;*.svg";
+                if (dialog.ShowDialog() == true)
+                {
+                    alternative.Image = dialog.FileName;
+                    MessageBox.Show(alternative.Image);
+                }
+            }
+
+            Alternatives.Add(alternative);
         }
 
         /// <summary>
