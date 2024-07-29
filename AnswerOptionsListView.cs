@@ -24,9 +24,7 @@ namespace exam_creator
     /// </summary>
     public partial class AnswerOptionsListView : UserControl
     {
-        //private ObservableCollection<QuestionAlternative> alternatives;
-
-        public ObservableCollection<QuestionAlternative> Alternatives { get; set;    }
+        public ObservableCollection<QuestionAlternative> Alternatives { get; set; }
 
         /// <summary>
         /// Static constructor. 
@@ -38,11 +36,21 @@ namespace exam_creator
             Alternatives = new ObservableCollection<QuestionAlternative>();
         }
 
+        /// <summary>
+        /// Handles the "Add Alternative" button click event.
+        /// </summary>
+        /// <param name="sender"> The event sender object. </param>
+        /// <param name="e"> The event args. </param>
         void OnBtnAddAlternative_Click(object sender, RoutedEventArgs e)
         {
             Alternatives.Add(new QuestionAlternative());
         }
 
+        /// <summary>
+        /// Handles the delete icon mouse down event. 
+        /// </summary>
+        /// <param name="sender"> The event sender object. </param>
+        /// <param name="e"> The event args. </param>
         void OnDeleteIcon_MouseDown(object sender, MouseButtonEventArgs e) {
             var button = (Image)sender;
             var item = (QuestionAlternative)button.Tag;
