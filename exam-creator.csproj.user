@@ -13,6 +13,9 @@
     <Compile Update="MainPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="AnswerOptionsListView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="CreateQuestionWindow.xaml">
@@ -24,6 +27,9 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+	<Compile Update="AnswerOptionsListView.xaml">
+      <SubType>Code</SubType>
+    </Compile>
     <Page Update="Themes\Generic.xaml">
       <SubType>Designer</SubType>
     </Page>
