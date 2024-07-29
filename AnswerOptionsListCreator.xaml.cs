@@ -20,16 +20,16 @@ using System.Windows.Shapes;
 namespace exam_creator
 {
     /// <summary>
-    /// Class <c>AnswerOptionsListView</c> is a control to create a list of alternatives of a question.
+    /// Class <c>AnswerOptionsListCreator</c> is a control to create a list of alternatives of a question.
     /// </summary>
-    public partial class AnswerOptionsListView : UserControl
+    public partial class AnswerOptionsListCreator : UserControl
     {
         public ObservableCollection<QuestionAlternative> Alternatives { get; set; }
 
         /// <summary>
         /// Static constructor. 
         /// </summary>
-        public AnswerOptionsListView()
+        public AnswerOptionsListCreator()
         {
             InitializeComponent();
             DataContext = this;

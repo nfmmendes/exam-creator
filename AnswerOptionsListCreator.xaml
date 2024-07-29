@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:exam_creator"
     xmlns:converters="clr-namespace:exam_creator.Converters"
-    x:Class="exam_creator.AnswerOptionsListView">
+    x:Class="exam_creator.AnswerOptionsListCreator">
     <UserControl.Resources>
         <converters:WidthSubtractionConverter x:Key="dateConverter"/>
        
