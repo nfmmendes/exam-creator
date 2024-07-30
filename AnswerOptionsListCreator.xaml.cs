@@ -18,9 +18,25 @@ namespace exam_creator
         public ObservableCollection<QuestionAlternative> Alternatives { get; set; }
 
         /// <value>
+        /// Defines a dependencce property to enable using IsImageList as a xaml attribute. 
+        /// </value>
+        public static readonly DependencyProperty IsImageListProperty = DependencyProperty.Register(
+          name: "IsImageList",
+          propertyType: typeof(bool),
+          ownerType: typeof(AnswerOptionsListCreator),
+          typeMetadata: new FrameworkPropertyMetadata(
+              defaultValue: false,
+              flags: FrameworkPropertyMetadataOptions.AffectsRender,
+              propertyChangedCallback: new PropertyChangedCallback(IsImageListChanged))
+        );
+
+        /// <value>
         /// Defines if the alternatives are images. The default value is false. 
         /// </value>
-        public bool IsImageList { get; set; } = false;
+        public bool IsImageList {
+            get => (bool)GetValue(IsImageListProperty);
+            set => SetValue(IsImageListProperty, value);
+        }
 
         /// <summary>
         /// Static constructor. 
@@ -64,6 +80,10 @@ namespace exam_creator
             var item = (QuestionAlternative)button.Tag;
 
             Alternatives.Remove(item);
+        }
+
+        private static void IsImageListChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        { 
         }
     }
 }
