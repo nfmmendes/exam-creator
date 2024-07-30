@@ -26,8 +26,7 @@ namespace exam_creator
           ownerType: typeof(AnswerOptionsListCreator),
           typeMetadata: new FrameworkPropertyMetadata(
               defaultValue: false,
-              flags: FrameworkPropertyMetadataOptions.AffectsRender,
-              propertyChangedCallback: new PropertyChangedCallback(IsImageListChanged))
+              flags: FrameworkPropertyMetadataOptions.AffectsRender)
         );
 
         /// <value>
@@ -37,6 +36,8 @@ namespace exam_creator
             get => (bool)GetValue(IsImageListProperty);
             set => SetValue(IsImageListProperty, value);
         }
+
+        private bool ShowTextAlternative => !IsImageList;
 
         /// <summary>
         /// Static constructor. 
@@ -80,10 +81,6 @@ namespace exam_creator
             var item = (QuestionAlternative)button.Tag;
 
             Alternatives.Remove(item);
-        }
-
-        private static void IsImageListChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        { 
         }
     }
 }
