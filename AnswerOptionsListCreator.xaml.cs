@@ -61,12 +61,13 @@ namespace exam_creator
             {
                 var dialog = new OpenFileDialog();
                 dialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.svg)|*.jpg;*.jpeg;*.png;*.svg";
-                if (dialog.ShowDialog() == true)
-                {
-                    alternative.Image = dialog.FileName;
-                    MessageBox.Show(alternative.Image);
-                }
+                if (!dialog.ShowDialog() ?? false)
+                    return;
+
+                alternative.Image = dialog.FileName;
+                var dialogResult = MessageBox.Show(alternative.Image);
             }
+
 
             Alternatives.Add(alternative);
         }
