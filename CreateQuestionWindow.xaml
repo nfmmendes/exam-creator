@@ -29,6 +29,10 @@
             <CheckBox Content="Single answer?" IsChecked="true" />
             <local:AnswerOptionsListCreator IsImageList="{Binding IsChecked, ElementName=imageAlternativesCheckBox}"/>
         </StackPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="32">
+            <Button Name="BtnAdd" Content="Add" Width="100" Height="24" Margin="24 0"/>
+            <Button Name="Cancel" Content="Cancel" Width="100" Height="24"/>
+        </StackPanel>
     </DockPanel>
 
 </Window>
