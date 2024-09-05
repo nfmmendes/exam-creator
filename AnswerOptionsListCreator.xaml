@@ -1,4 +1,4 @@
-<UserControl
+<UserControl x:Name="Root"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:exam_creator"
@@ -6,7 +6,8 @@
     x:Class="exam_creator.AnswerOptionsListCreator">
     <UserControl.Resources>
         <converters:WidthSubtractionConverter x:Key="dateConverter"/>
-       
+        <converters:BoolToVisibilityConverter x:Key="visibilityConverter" />
+
         <Binding x:Key="WindowWidthBinding"
                 RelativeSource="{RelativeSource FindAncestor,  AncestorType={x:Type Window}}"
                 Path="ActualWidth"
@@ -47,8 +48,12 @@
                             <TextBox Text="{Binding Text}" Name="Option1Text" 
                                      Height="40" VerticalScrollBarVisibility="Auto" 
                                      Margin="30,0, 20, 0"
-                                      Width="{StaticResource ListViewWidthBinding}"
+                                     Width="{StaticResource ListViewWidthBinding}"
+                                     Visibility="{Binding Path=ShowTextAlternative, ElementName=Root, Converter={StaticResource visibilityConverter}, ConverterParameter=ShowTextAlternative}"
                                      />
+                            <TextBox Text="A Image" 
+									 Margin="30,0, 20, 0"
+									 Visibility="{Binding Path=IsImageList, ElementName=Root, Converter={StaticResource visibilityConverter}, ConverterParameter=IsImageList}" />
                             <Image Name="DeleteIcon" Style="{StaticResource ResourceKey=DeleteIcon}" 
                                    MouseDown="OnDeleteIcon_MouseDown" Tag="{Binding}"/>
                         </Grid>
