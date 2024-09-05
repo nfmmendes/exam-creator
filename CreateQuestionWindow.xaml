@@ -17,17 +17,18 @@
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
     </Window.Resources>
-    <StackPanel>
-        <TextBlock Text="Question text" Style="{StaticResource FormLabel}"/>
-        <TextBox MaxLines="12" Height="150" VerticalScrollBarVisibility="Auto" FontSize="14"/>
-        <StackPanel Orientation="Horizontal">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Text="Question text" Style="{StaticResource FormLabel}"/>
+        <TextBox DockPanel.Dock="Top" MaxLines="12" Height="150" VerticalScrollBarVisibility="Auto" FontSize="14"/>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
             <CheckBox Name="multipleChoicesCheckBox" Content="Multiple choices?" />
             <CheckBox Name="imageAlternativesCheckBox" Content="Image alternatives?" />
         </StackPanel>
-        <StackPanel Visibility="{Binding IsChecked,ElementName=multipleChoicesCheckBox, 
+        <StackPanel DockPanel.Dock="Top" Visibility="{Binding IsChecked,ElementName=multipleChoicesCheckBox, 
                    Converter={StaticResource booleanToVisibility}}">
             <CheckBox Content="Single answer?" IsChecked="true" />
             <local:AnswerOptionsListCreator IsImageList="{Binding IsChecked, ElementName=imageAlternativesCheckBox}"/>
         </StackPanel>
-    </StackPanel>
+    </DockPanel>
+
 </Window>
