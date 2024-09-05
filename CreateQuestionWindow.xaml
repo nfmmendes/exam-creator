@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:exam_creator"
         mc:Ignorable="d"
-        Title="CreateQuestionWindow" Height="750" Width="800">
+        Title="CreateQuestionWindow" Height="750" Width="800" Closing="OnClosing">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="booleanToVisibility"/>
         <Style TargetType="CheckBox">
@@ -18,8 +18,8 @@
         </Style>
     </Window.Resources>
     <DockPanel>
-        <TextBlock DockPanel.Dock="Top" Text="Question text" Style="{StaticResource FormLabel}"/>
-        <TextBox DockPanel.Dock="Top" MaxLines="12" Height="150" VerticalScrollBarVisibility="Auto" FontSize="14"/>
+        <TextBlock DockPanel.Dock="Top"  Text="Question text" Style="{StaticResource FormLabel}"/>
+        <TextBox DockPanel.Dock="Top" Name="questionText" MaxLines="12" Height="150" VerticalScrollBarVisibility="Auto" FontSize="14"/>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
             <CheckBox Name="multipleChoicesCheckBox" Content="Multiple choices?" />
             <CheckBox Name="imageAlternativesCheckBox" Content="Image alternatives?" />
@@ -27,11 +27,11 @@
         <StackPanel DockPanel.Dock="Top" Visibility="{Binding IsChecked,ElementName=multipleChoicesCheckBox, 
                    Converter={StaticResource booleanToVisibility}}">
             <CheckBox Content="Single answer?" IsChecked="true" />
-            <local:AnswerOptionsListCreator IsImageList="{Binding IsChecked, ElementName=imageAlternativesCheckBox}"/>
+            <local:AnswerOptionsListCreator x:Name="answerListCreator" IsImageList="{Binding IsChecked, ElementName=imageAlternativesCheckBox}"/>
         </StackPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="32">
-            <Button Name="BtnAdd" Content="Add" Width="100" Height="24" Margin="24 0"/>
-            <Button Name="Cancel" Content="Cancel" Width="100" Height="24"/>
+            <Button Name="btnAdd" Content="Add" Width="100" Height="24" Margin="24 0"/>
+            <Button Name="btnCancel" Content="Cancel" Width="100" Height="24" IsCancel="True"/>
         </StackPanel>
     </DockPanel>
 
