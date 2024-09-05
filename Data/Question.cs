@@ -43,7 +43,7 @@ namespace exam_creator.Data
         /// <param name="isMultipleChoices"> True if the question is a multiple choices question, false otherwise. </param>
         /// <param name="isSingleChoice"> True if the question has a single answer, false otherwise. </param>
         /// <param name="alternatives"> Lists of alternatives in a multiple choiches question. </param>
-        public Question(string text, bool isMultipleChoices, bool isSingleChoice, List<QuestionAlternative>? alternatives = null)
+        public Question(string text, bool isMultipleChoices = false, bool isSingleChoice = true, List<QuestionAlternative>? alternatives = null)
         {
             IsMultipleChoices = isMultipleChoices;
             IsSingleChoice = isSingleChoice;
