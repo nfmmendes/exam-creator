@@ -26,11 +26,11 @@
         </StackPanel>
         <StackPanel DockPanel.Dock="Top" Visibility="{Binding IsChecked,ElementName=multipleChoicesCheckBox, 
                    Converter={StaticResource booleanToVisibility}}">
-            <CheckBox Content="Single answer?" IsChecked="true" />
+            <CheckBox Name="isSingleCorrectAnswerCheckBox" Content="Single answer?" IsChecked="true" />
             <local:AnswerOptionsListCreator x:Name="answerListCreator" IsImageList="{Binding IsChecked, ElementName=imageAlternativesCheckBox}"/>
         </StackPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="32">
-            <Button Name="btnAdd" Content="Add" Width="100" Height="24" Margin="24 0"/>
+            <Button Name="btnAdd" Content="Add" Width="100" Height="24" Margin="24 0" Click="OnBtnAdd_Click"/>
             <Button Name="btnCancel" Content="Cancel" Width="100" Height="24" IsCancel="True"/>
         </StackPanel>
     </DockPanel>

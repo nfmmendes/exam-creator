@@ -21,6 +21,8 @@ namespace exam_creator
     /// </summary>
     public partial class CreateQuestionWindow : Window
     {
+        public Question Question { get; private set; }
+     
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -29,6 +31,20 @@ namespace exam_creator
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handle the click on button "Add" event. 
+        /// </summary>
+        /// <param name="sender">The event sender (button Add)</param>
+        /// <param name="e"> The event </param>
+        public void OnBtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            if (multipleChoicesCheckBox.IsChecked ?? false)
+            {
+                Question = new Question(questionText.Text, true, isSingleCorrectAnswerCheckBox.IsChecked ?? false, answerListCreator.Alternatives.ToList());
+                DialogResult = true;
+                Close();
+            }
+        }
 
         /// <summary>
         /// Handle the window closing event.
@@ -37,6 +53,9 @@ namespace exam_creator
         /// <param name="e">The event args object</param>
         public void OnClosing(object sender, CancelEventArgs e)
         {
+            if (DialogResult == true)
+                return;
+
             if (answerListCreator.Alternatives.Count > 0 || questionText.Text.Length > 0)
             {
                 var message = "Are you sure you want to close this window? You have unsaved changes that will be lost.";
