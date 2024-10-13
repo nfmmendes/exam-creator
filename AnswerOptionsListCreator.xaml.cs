@@ -20,7 +20,7 @@ namespace exam_creator
         /// <value>
         /// Defines a dependencce property to enable using IsImageList as a xaml attribute. 
         /// </value>
-        public static readonly DependencyProperty IsImageListProperty = DependencyProperty.Register(
+        private static readonly DependencyProperty IsImageListProperty = DependencyProperty.Register(
           name: "IsImageList",
           propertyType: typeof(bool),
           ownerType: typeof(AnswerOptionsListCreator),
