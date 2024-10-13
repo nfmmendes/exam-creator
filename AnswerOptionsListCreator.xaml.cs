@@ -37,8 +37,6 @@ namespace exam_creator
             set => SetValue(IsImageListProperty, value);
         }
 
-        private bool ShowTextAlternative => !IsImageList;
-
         /// <summary>
         /// Static constructor. 
         /// </summary>

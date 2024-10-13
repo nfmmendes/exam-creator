@@ -7,7 +7,17 @@
     <UserControl.Resources>
         <converters:WidthSubtractionConverter x:Key="dateConverter"/>
         <converters:BoolToVisibilityConverter x:Key="visibilityConverter" />
-
+		<Style x:Key="inverter" TargetType="TextBox">
+		    <Style.Triggers >
+			    <DataTrigger Binding="{Binding ElementName=Root, Path=IsImageList}" Value="False">
+				    <Setter Property="Visibility" Value="Visible"/>
+			    </DataTrigger>
+			    <DataTrigger Binding="{Binding ElementName=Root, Path=IsImageList}" Value="True">
+				    <Setter Property="Visibility" Value="Hidden"/>
+			    </DataTrigger>
+		    </Style.Triggers>
+		</Style>
+		
         <Binding x:Key="WindowWidthBinding"
                 RelativeSource="{RelativeSource FindAncestor,  AncestorType={x:Type Window}}"
                 Path="ActualWidth"
@@ -49,7 +59,7 @@
                                      Height="40" VerticalScrollBarVisibility="Auto" 
                                      Margin="30,0, 20, 0"
                                      Width="{StaticResource ListViewWidthBinding}"
-                                     Visibility="{Binding Path=ShowTextAlternative, ElementName=Root, Converter={StaticResource visibilityConverter}, ConverterParameter=ShowTextAlternative}"
+                                     Style="{StaticResource inverter}"
                                      />
                             <Button Content="Choose a Image" 
 									 Margin="30,0, 20, 0"
