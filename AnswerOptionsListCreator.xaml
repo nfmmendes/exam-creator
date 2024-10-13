@@ -51,7 +51,7 @@
                                      Width="{StaticResource ListViewWidthBinding}"
                                      Visibility="{Binding Path=ShowTextAlternative, ElementName=Root, Converter={StaticResource visibilityConverter}, ConverterParameter=ShowTextAlternative}"
                                      />
-                            <TextBox Text="A Image" 
+                            <Button Content="Choose a Image" 
 									 Margin="30,0, 20, 0"
 									 Visibility="{Binding Path=IsImageList, ElementName=Root, Converter={StaticResource visibilityConverter}, ConverterParameter=IsImageList}" />
                             <Image Name="DeleteIcon" Style="{StaticResource ResourceKey=DeleteIcon}" 
