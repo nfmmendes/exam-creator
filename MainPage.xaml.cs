@@ -26,7 +26,8 @@ namespace exam_creator
         }
         private void BtnCreateNewExam_Click(object sender, RoutedEventArgs e)
         {
-            var _ = MessageBox.Show($"{BtnCreateNewExam.Content} button clicked");
+            var createNewWindow = new CreateExamWindow();
+            createNewWindow.ShowDialog();
         }
 
         private void BtnOpenExam_Click(object sender, RoutedEventArgs e)
