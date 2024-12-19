@@ -8,8 +8,13 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Create new exam">
 
-    <Grid>
+    <StackPanel Margin="10">
         <Label FontSize="18" Content="Exam name"/>
-        <TextBlock Width="140"></TextBlock>
-    </Grid>
+        <TextBox Width="140" FontSize="12" HorizontalAlignment="Left" Height="20" Text="Enter the exam name"/>
+
+        <StackPanel Orientation="Horizontal" Margin="10 10">
+            <Button Content="Save" Margin="10" FontSize="14" Padding="4"/>
+            <Button Content="Cancel" Margin="10" FontSize="14" Padding="4"/>
+        </StackPanel>
+    </StackPanel>
 </Window>
